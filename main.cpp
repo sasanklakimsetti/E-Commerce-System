@@ -188,30 +188,29 @@ class Checkout{
                 cout<<"4. American Express"<<endl;
                 int option3; cin>>option3;
                 if(option3==1){
-                    cout<<"Enter your visa card details: ";
+                    cout<<"Enter your visa card details";
                     string cardNumber;
                     int expiryMonth, expiryYear;
                     string cvv;
+                    cout<<"Enter Credit Card Number: ";
                     do{
                         cin>>cardNumber;
                         fflush(stdin);
-                        if(cardNumber.size()>16){
+                        if(cardNumber.size()>16||cardNumber.size()<16){
                             cout<<"Card number can't be greater than 16 digits"<<endl;
-                            cout<<"Enter the card number again"<<endl;
-                            cin>>cardNumber;
-                            fflush(stdin);
+                            cout<<"Enter the card number again: ";
                         }
-                    }while(cardNumber.size()>16);
-                    do{
+                    }while(cardNumber.size()>16||cardNumber.size()<16);
+                    cout<<"Enter Expiry Month: ";
+                    do{ 
                         cin>>expiryMonth;
                         if(expiryMonth<1||expiryMonth>12){
                             cout<<"Invalid month input"<<endl;
-                            cout<<"Enter the expiry month again"<<endl;
-                            cin>>expiryMonth;
+                            cout<<"Enter the expiry month again: ";
                         }
                     } while(expiryMonth<2025);
+                    cout << "Enter the expiry year: ";
                     do {
-                        cout << "Enter the expiry year: ";
                         cin >> expiryYear;
                         if (expiryYear < 2025) 
                         {
@@ -219,15 +218,138 @@ class Checkout{
                             cout << "Please enter a valid expiry year: ";
                         }
                     } while (expiryYear < 2025);
+                    cout<<"Enter the CVV: ";
                     do{
-                        cout<<"Enter the CVV: ";
                         cin>>cvv;
-                        if(cvv.size()>3){
+                        if(cvv.size()>3||cvv.size()<3){
                             cout<<"CVV can't be more than 3 digits"<<endl;
-                            cout<<"Enter the CVV again: "<<endl;
-                            cin>>cvv;
+                            cout<<"Enter the CVV again: ";
                         }
-                    }while(cvv.size()>3);
+                    }while(cvv.size()>3||cvv.size()<3);
+                    cout<<"Payment Processing....."<<endl;
+                }
+                else if(option3==2){
+                    cout<<"Enter your Mastercard card details"<<endl;
+                    string cardNumber;
+                    int expiryMonth, expiryYear;
+                    string cvv;
+                    cout<<"Enter Credit Card Number: ";
+                    do{
+                        cin>>cardNumber;
+                        fflush(stdin);
+                        if(cardNumber.size()>16||cardNumber.size()<16){
+                            cout<<"Card number can't be greater than 16 digits"<<endl;
+                            cout<<"Enter the card number again: ";
+                        }
+                    }while(cardNumber.size()>16||cardNumber.size()<16);
+                    cout<<"Enter Expiry Month: ";
+                    do{
+                        cin>>expiryMonth;
+                        if(expiryMonth<1||expiryMonth>12){
+                            cout<<"Invalid month input"<<endl;
+                            cout<<"Enter the expiry month again: ";
+                        }
+                    } while(expiryMonth<2025);
+                    cout << "Enter the expiry year: ";
+                    do {
+                        cin >> expiryYear;
+                        if (expiryYear < 2025) 
+                        {
+                            cout << "Expiry year can't be earlier than the current year" << endl;
+                            cout << "Please enter a valid expiry year: ";
+                        }
+                    } while (expiryYear < 2025);
+                    cout<<"Enter the CVV: ";
+                    do {
+                        cin>>cvv;
+                        if(cvv.size()>3||cvv.size()<3){
+                            cout<<"CVV can't be more than 3 digits"<<endl;
+                            cout<<"Enter the CVV again: ";
+                        }
+                    }while(cvv.size()>3||cvv.size()<3);
+                    cout<<"Payment Processing....."<<endl;
+                }
+                else if(option3==3){
+                    cout<<"Enter your Rupay card details"<<endl;
+                    string cardNumber;
+                    int expiryMonth, expiryYear;
+                    string cvv;
+                    cout<<"Enter Credit Card Number: ";
+                    do{
+                        cin>>cardNumber;
+                        fflush(stdin);
+                        if(cardNumber.size()>16||cardNumber.size()<16){
+                            cout<<"Card number can't be greater than 16 digits"<<endl;
+                            cout<<"Enter the card number again: ";
+                        }
+                    }while(cardNumber.size()>16||cardNumber.size()<16);
+                    cout<<"Enter Expiry Month: ";
+                    do{
+                        cin>>expiryMonth;
+                        if(expiryMonth<1||expiryMonth>12){
+                            cout<<"Invalid month input"<<endl;
+                            cout<<"Enter the expiry month again: ";
+                        }
+                    } while(expiryMonth<2025);
+                    cout << "Enter the expiry year: ";
+                    do {
+                        cin >> expiryYear;
+                        if (expiryYear < 2025) 
+                        {
+                            cout << "Expiry year can't be earlier than the current year" << endl;
+                            cout << "Please enter a valid expiry year: ";
+                        }
+                    } while (expiryYear < 2025);
+                    cout<<"Enter the CVV: ";
+                    do{
+                        cin>>cvv;
+                        if(cvv.size()>3||cvv.size()<3){
+                            cout<<"CVV can't be more than 3 digits"<<endl;
+                            cout<<"Enter the CVV again: ";
+                        }
+                    }while(cvv.size()>3||cvv.size()<3);
+                    cout<<"Payment Processing....."<<endl;
+                }
+                else if(option3==4){
+                    cout<<"Enter your American Express card details"<<endl;
+                    string cardNumber;
+                    int expiryMonth, expiryYear;
+                    string cvv;
+                    cout<<"Enter Credit Card Number: ";
+                    do{
+                        cin>>cardNumber;
+                        fflush(stdin);
+                        if(cardNumber.size()>15||cardNumber.size()<15){
+                            cout<<"Card number can't be greater than 15 digits"<<endl;
+                            cout<<"Enter the card number again: ";
+                        }
+                    }while(cardNumber.size()>15||cardNumber.size()<15);
+                    cout<<"Enter Expiry Month: ";
+                    do{
+                        cin>>expiryMonth;
+                        if(expiryMonth<1||expiryMonth>12){
+                            cout<<"Invalid month input"<<endl;
+                            cout<<"Enter the expiry month again: ";
+                        }
+                    } while(expiryMonth<2025);
+                    cout << "Enter the expiry year: ";
+                    do {
+                        cin >> expiryYear;
+                        if (expiryYear < 2025) 
+                        {
+                            cout << "Expiry year can't be earlier than the current year" << endl;
+                            cout << "Please enter a valid expiry year: ";
+                        }
+                    } while (expiryYear < 2025);
+                    cout<<"Enter the CVV: ";
+                    do{
+                        cin>>cvv;
+                        if(cvv.size()>4||cvv.size()<4){
+                            cout<<"CVV can't be more than 4 digits"<<endl;
+                            cout<<"Enter the CVV again: ";
+                        }
+                    }while(cvv.size()>4||cvv.size()<4);
+                    cout<<"Payment Processing....."<<endl;
                 }
             }
         }
