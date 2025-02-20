@@ -15,7 +15,7 @@ class Register{
         int calculateAge(int year);
         bool checkLeapYear(int year);
         bool validateDate(int date, int month, int year);
-        bool registerUser(string fname, string lname, string email, int date, int month, int year, string address, string password, string confirmPassword);
+        bool registerUser(string fname, string lname, string email, int date, int month, int year, string address, string password, string confirmPassword, string role);
         void getUserDetails();
 };
 #endif //REGISTER_H

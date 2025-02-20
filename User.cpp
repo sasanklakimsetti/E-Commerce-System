@@ -2,7 +2,7 @@
 using namespace std;
 #include "User.h"
 
-User::User(string fname, string lname, string email, int date, int month, int year, string address, string password){
+User::User(string fname, string lname, string email, int date, int month, int year, string address, string password, string role){
     this->fname=fname;
     this->lname=lname;
     this->email=email;
@@ -11,6 +11,7 @@ User::User(string fname, string lname, string email, int date, int month, int ye
     this->year=year;
     this->address=address;
     this->password=password;
+    this->role=role;
 
     dob=to_string(date)+'-'+to_string(month)+'-'+to_string(year);
 
