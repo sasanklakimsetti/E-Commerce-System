@@ -5,17 +5,17 @@
 using namespace std;
 class Register{
     private:
-        const string userFile="users.csv";
-        void saveUserToFile(const User &user);
-        bool userExists(string email);
-        int getCurrentYear();
+        static const string userFile;
+        static void saveUserToFile(const User &user);
+        static bool userExists(string email);
+        static int getCurrentYear();
     public:
-        bool validateAge(int year);
-        bool validatePassword(string password, string confirmPassword);
-        int calculateAge(int year);
-        bool checkLeapYear(int year);
-        bool validateDate(int date, int month, int year);
-        bool registerUser(string fname, string lname, string email, int date, int month, int year, string address, string password, string confirmPassword, string role);
-        void getUserDetails();
+        static bool validateAge(int year);
+        static bool validatePassword(string password, string confirmPassword);
+        static int calculateAge(int year);
+        static bool checkLeapYear(int year);
+        static bool validateDate(int date, int month, int year);
+        static bool registerUser(string fname, string lname, string email, int date, int month, int year, string address, string password, string confirmPassword, string role);
+        static void getUserDetails();
 };
 #endif //REGISTER_H

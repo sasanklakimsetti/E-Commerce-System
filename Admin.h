@@ -7,5 +7,7 @@ class Admin:public Role{
     public:
     Admin();
     void showServices() override;
+    void manageProducts();
+    void manageUsers();
 };
 #endif

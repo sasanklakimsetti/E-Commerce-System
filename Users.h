@@ -7,5 +7,6 @@ class Users:public Role{
     public:
     Users();
     void showServices() override;
+    static vector<Users>loadUsers();
 };
 #endif

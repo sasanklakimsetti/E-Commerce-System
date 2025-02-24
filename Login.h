@@ -14,8 +14,5 @@ class Login{
     bool authenticateUser();
     void getUserDetails();
     bool isAdmin(string email);
-    void displayAdminDashboard();
-    void displayUserDashboard();
-    void displaySellerDashboard();
 };
 #endif

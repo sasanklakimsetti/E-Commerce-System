@@ -2,6 +2,7 @@
 #include "User.h"
 #include<bits/stdc++.h>
 using namespace std;
+const string Register::userFile = "users.csv";
 void Register::saveUserToFile(const User& user){
     ofstream file(userFile, ios::app);
     if(!file){
