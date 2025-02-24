@@ -5,9 +5,9 @@
 using namespace std;
 class Register{
     private:
-        static const string userFile;
-        static void saveUserToFile(const User &user);
-        static bool userExists(string email);
+        static const string fileName;
+        static void saveUserToFile(const User &user, const string& fileName);
+        static bool userExists(string email, const string &fileName);
         static int getCurrentYear();
     public:
         static bool validateAge(int year);
@@ -15,7 +15,7 @@ class Register{
         static int calculateAge(int year);
         static bool checkLeapYear(int year);
         static bool validateDate(int date, int month, int year);
-        static bool registerUser(string fname, string lname, string email, int date, int month, int year, string address, string password, string confirmPassword, string role);
+        static bool registerUser(string fname, string lname, string email, int date, int month, int year, string address, string password, string confirmPassword, string role, const string &fileName);
         static void getUserDetails();
 };
 #endif //REGISTER_H

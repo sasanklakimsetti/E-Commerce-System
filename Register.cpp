@@ -2,9 +2,9 @@
 #include "User.h"
 #include<bits/stdc++.h>
 using namespace std;
-const string Register::userFile = "users.csv";
-void Register::saveUserToFile(const User& user){
-    ofstream file(userFile, ios::app);
+//const string Register::fileName = "users.csv";
+void Register::saveUserToFile(const User& user, const string &fileName){
+    ofstream file(fileName, ios::app);
     if(!file){
         cout<<"Error: Unable to open the file for saving the user data."<<endl;
         return;
@@ -12,8 +12,8 @@ void Register::saveUserToFile(const User& user){
     file<<user.fname<<","<<user.lname<<","<<user.email<<","<<user.date<<","<<user.month<<","<<user.year<<","<<user.address<<","<<user.password<<","<<user.role<<"\n";
     file.close();
 }
-bool Register::userExists(string email){
-    ifstream file(userFile);
+bool Register::userExists(string email, const string &fileName){
+    ifstream file(fileName);
     if(!file) return false;
     string line, storedEmail;
     while(getline(file,line)){
@@ -68,8 +68,8 @@ bool Register::validateDate(int date, int month, int year){
     else daysInMonth = 31;
     return date>=1&&date<=daysInMonth;
 }
-bool Register::registerUser(string fname, string lname, string email, int date, int month, int year, string address, string password, string confirmPassword, string role){
-    if(userExists(email)){
+bool Register::registerUser(string fname, string lname, string email, int date, int month, int year, string address, string password, string confirmPassword, string role, const string &fileName){
+    if(userExists(email, fileName)){
         cout<<"User with this email already exists!"<<endl;
         return false;
     }
@@ -90,7 +90,7 @@ bool Register::registerUser(string fname, string lname, string email, int date, 
         return false;
     }
     User newUser(fname, lname, email,date,month,year,address,password, role);
-    saveUserToFile(newUser);
+    saveUserToFile(newUser, fileName);
     cout<<"User registered successfully"<<endl;
     newUser.welcome();
     newUser.display();
@@ -115,5 +115,5 @@ void Register::getUserDetails(){
     }
     cout << "Enter Password: "; cin >> password;
     cout << "Confirm Password: "; cin >> confirmPassword;
-    registerUser(fname, lname, email, date, month, year, address, password, confirmPassword, role);
+    registerUser(fname, lname, email, date, month, year, address, password, confirmPassword, role,"users.csv");
 }

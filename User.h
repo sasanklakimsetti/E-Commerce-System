@@ -1,7 +1,7 @@
 #ifndef USER_H
 #define USER_H
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class User {
@@ -13,6 +13,7 @@ public:
 
     void welcome();
     void display();
+    static vector<User> loadUsers();
 };
 
 #endif // USER_H
